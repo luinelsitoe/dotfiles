@@ -1,0 +1,10 @@
+set relativenumber
+set number
+
+
+
+
+
+
+
+

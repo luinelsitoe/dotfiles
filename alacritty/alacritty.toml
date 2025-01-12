@@ -1,0 +1,31 @@
+import = [
+  "~/.config/alacritty/catppuccin-mocha-teal.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 13.5
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrains Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Italic"
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+[window]
+opacity = 0.90
+
+[cursor]
+style = "Block"

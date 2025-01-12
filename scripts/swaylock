@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Define as cores
+background="#1e1e2e"   # $DEFAULT
+color1="#b4befe"        # $TEXT
+color2="#f5c2e7"        # $pink
+color3="#a6e3a1"        # $green
+color5="#f38ba8"        # $red
+
+# Comando swaylock
+swaylock -k \
+  --indicator-radius 120 \
+  --indicator-thickness 15 \
+  --inside-color 00000000 \
+  --inside-clear-color 00000000 \
+  --inside-ver-color 00000000 \
+  --inside-wrong-color 00000000 \
+  --key-hl-color "$color1" \
+  --bs-hl-color "$color2" \
+  --ring-color "$background" \
+  --ring-clear-color "$color2" \
+  --ring-wrong-color "$color5" \
+  --ring-ver-color "$color3" \
+  --line-uses-ring \
+  --line-color 00000000 \
+  --font 'JetBrainsMono Nerd Font Propo:style=Thin,Regular 15' \
+  --text-color 00000000 \
+  --text-clear-color 00000000 \
+  --text-wrong-color 00000000 \
+  --text-ver-color 00000000 \
+  --separator-color 00000000 \
+  --image "$HOME/astronaut.jpg" \
+  --daemonize
+

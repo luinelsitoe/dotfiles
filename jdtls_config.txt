@@ -1,0 +1,51 @@
+Com o jdtls já instalado pelo Mason, você pode seguir os próximos passos para configurá-lo no Neovim:
+1. Verificar o Caminho do Servidor
+
+Certifique-se de que o Mason instalou o jdtls corretamente e encontre o caminho para o binário:
+
+:echo stdpath('data') . '/mason/packages/jdtls/bin/jdtls'
+
+Copie o caminho exibido, pois ele será usado na configuração.
+2. Criar Configuração Específica para Java
+
+Crie o arquivo de configuração específico para arquivos Java no diretório ~/.config/nvim/ftplugin/java.lua:
+
+mkdir -p ~/.config/nvim/ftplugin
+nvim ~/.config/nvim/ftplugin/java.lua
+
+Adicione a seguinte configuração no arquivo:
+
+local config = {
+    cmd = {
+        vim.fn.stdpath("data") .. "/mason/packages/jdtls/bin/jdtls"
+    },
+    root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
+}
+require('jdtls').start_or_attach(config)
+
+3. Instalar o Plugin nvim-jdtls
+
+Certifique-se de ter o plugin instalado com seu gerenciador. Por exemplo, com o vim-plug, adicione ao seu init.lua ou init.vim:
+
+Plug 'mfussenegger/nvim-jdtls'
+
+Após salvar, rode o comando:
+
+:PlugInstall
+
+4. Configurar o Ambiente do jdtls
+
+Certifique-se de estar usando Java 17 e de que o jdtls conhece o JDK correto:
+
+    Configuração do Runtime: Crie ou edite o arquivo ~/.local/share/nvim/eclipse-jdtls/config_linux/config.ini:
+
+    org.eclipse.jdt.ls.java.home=/path/to/your/java-17
+
+5. Testar a Configuração
+
+    Abra um arquivo .java em um projeto com Neovim.
+    Certifique-se de que o LSP está funcionando executando:
+
+:LspInfo
+
+Verifique se o jdtls está listado.

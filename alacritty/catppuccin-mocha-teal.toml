@@ -1,0 +1,75 @@
+
+[colors.primary]
+background = "#1E1E2E"
+foreground = "#E6E6E6" # Texto mais claro para melhorar o contraste
+
+[colors.cursor]
+text = "#1E1E2E"
+cursor = "#94E2D5"
+
+[colors.vi_mode_cursor]
+text = "#1E1E2E"
+cursor = "#89DCEB"
+
+[colors.search.matches]
+foreground = "#1E1E2E"
+background = "#94E2D5"
+
+[colors.search.focused_match]
+foreground = "#1E1E2E"
+background = "#A6E3A1"
+
+[colors.footer_bar]
+foreground = "#1E1E2E"
+background = "#89DCEB"
+
+[colors.hints.start]
+foreground = "#1E1E2E"
+background = "#F9E2AF"
+
+[colors.hints.end]
+foreground = "#1E1E2E"
+background = "#89DCEB"
+
+[colors.selection]
+text = "#E6E6E6" # Texto mais claro para selecionar com contraste
+background = "#D64D55" # Vermelho mais escuro para seleção
+
+[colors.normal]
+black = "#1E1E2E"
+red = "#D64D55" # Vermelho mais escuro para maior contraste
+green = "#A6E3A1"
+yellow = "#F9E2AF"
+blue = "#89B4FA"
+magenta = "#F5C2E7"
+cyan = "#94E2D5" # Teal principal
+white = "#E6E6E6" # Branco mais claro
+
+[colors.bright]
+black = "#585B70"
+red = "#E06C75" # Vermelho mais suave e visível
+green = "#A6E3A1"
+yellow = "#F9E2AF"
+blue = "#89B4FA"
+magenta = "#F5C2E7"
+cyan = "#89DCEB" # Teal mais brilhante
+white = "#FFFFFF" # Branco puro para maior contraste
+
+[colors.dim]
+black = "#45475A"
+red = "#D64D55" # Vermelho mais escuro
+green = "#A6E3A1"
+yellow = "#F9E2AF"
+blue = "#89B4FA"
+magenta = "#F5C2E7"
+cyan = "#94E2D5"
+white = "#E6E6E6" # Branco mais claro
+
+[[colors.indexed_colors]]
+index = 16
+color = "#FAB387"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#94E2D5"
+

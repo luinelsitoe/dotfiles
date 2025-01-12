@@ -1,0 +1,60 @@
+[play_sound]
+    summary = "*"
+    script = ~/.config/dunst/play-sound.sh
+[global]
+    show_age_threshold = 60
+    # Notification alignment
+    alignment = center
+    # Follow mouse, none, or no
+    follow = mouse
+    # Layer of notifications: above or below
+    monitor = 0
+    # Padding between notifications
+    padding = 10
+    frame_width = 8
+    frame_color = "#1e1e2e"
+    separator_height = 2
+    separator_color = "#ff79c6"
+
+    # Transparency (0-100; 0: fully opaque, 100: fully transparent)
+    transparency = 10
+    # Gap between window and notification
+    gap_size = 5
+    # Corner roundness
+    corner_radius = 10
+    shrink = false
+    padding = 8
+
+    # Icons and images
+    icon_path = /usr/share/icons/candy-icons/
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 95
+
+    # Fonts and colors
+    font = Ubuntu 12
+    background = "#1e1e2e"
+    foreground = "#f8f8f2"
+    browser = /usr/bin/xdg-open
+[urgency_normal]
+    timeout = 0
+    background = "#1e1e2e"
+    foreground = "#ffffff"
+[urgency_critical]
+    timeout = 0
+    background = "#ff5555"
+    frame_color = "#ff5555"
+    foreground = "#f8f8f2"
+
+#My rules
+[ignore_notification]
+    appname = "notify-send"
+    history_ignore = yes
+
+[Spotify]
+    appname = "Spotify"
+    timeout = 10
+    history_ignore = yes
+[Rhythmbox]
+    appname = "Rhythmbox"
+    history_ignore = yes

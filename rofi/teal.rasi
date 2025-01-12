@@ -1,0 +1,112 @@
+* {
+    text: rgba(224, 251, 252, 1);  /* Um tom claro de teal */
+    transparent: rgba(0, 0, 0, 0.0);
+    bg-col: rgba(10, 15, 20, 0.8);  /* Fundo muito escuro */
+    bg-col-light: rgba(10, 15, 20, 0.0);
+    border-col: rgba(148, 226, 213, 0.8);  /* Um teal mais claro para a borda */
+    selected-col: rgba(10, 15, 20, 0.0);
+    blue: rgba(50, 100, 150, 1.0);  /* Azul mais escuro */
+    fg-col: rgba(200, 214, 224, 1.0);  /* Um tom claro para o texto */
+    fg-col2: rgba(243, 139, 168, 1.0);  /* Um tom suave de rosa */
+    grey: rgba(80, 85, 100, 1.0);  /* Cinza mais escuro */
+    width: 800;
+    font: "JetBrainsMono Nerd Font 18";
+}
+
+element-text, element-icon, mode-switcher {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+window {
+    height: 500px;
+    border: 3px;
+    border-color: @bg-col;
+    background-color: @transparent;
+}
+
+mainbox {
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: @transparent;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @blue;  /* Azul mais escuro */
+    padding: 6px;
+    text-color: @text;  /* Texto claro */
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @fg-col;  /* Texto claro */
+    background-color: @transparent;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 2;
+    lines: 5;
+    background-color: @transparent;
+}
+
+element {
+    padding: 5px;
+    background-color: @transparent;
+    text-color: @fg-col;  /* Texto claro */
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color: @transparent;
+    text-color: @fg-col2;  /* Um tom suave de rosa */
+}
+
+mode-switcher {
+    spacing: 0;
+}
+
+button {
+    padding: 10px;
+    background-color: @transparent;
+    text-color: @grey;  /* Cinza mais escuro */
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+button selected {
+    background-color: @transparent;
+    text-color: @blue;  /* Azul mais escuro */
+}
+
+message {
+    background-color: @text;  /* Texto claro */
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @blue;  /* Azul mais escuro */
+    background-color: @transparent;
+}

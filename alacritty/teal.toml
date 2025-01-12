@@ -1,0 +1,77 @@
+# Alacritty Configuration File
+
+[colors.primary]
+background = "#0A0F14"  # Fundo muito escuro
+foreground = "#D3D3D3"  # Texto em cinza claro
+dim_foreground = "#D3D3D3"  # Texto em cinza claro
+bright_foreground = "#D3D3D3"  # Texto em cinza claro
+
+[colors.cursor]
+text = "#D3D3D3"  # Cor do texto do cursor em cinza claro
+cursor = "#3A607E"  # Um teal mais escuro para o cursor
+
+[colors.vi_mode_cursor]
+text = "#D3D3D3"  # Cor do texto no modo vi em cinza claro
+cursor = "#5BC0BE"  # Um teal mais claro para o cursor no modo vi
+
+[colors.search.matches]
+foreground = "#D3D3D3"  # Cor do texto das correspondências em cinza claro
+background = "#4D9F9D"  # Um teal mais escuro para as correspondências
+
+[colors.search.focused_match]
+foreground = "#D3D3D3"  # Cor do texto da correspondência focada em cinza claro
+background = "#5BC0BE"  # Um teal claro para a correspondência focada
+
+[colors.footer_bar]
+foreground = "#D3D3D3"  # Cor do texto da barra de rodapé em cinza claro
+background = "#4D9F9D"  # Um teal mais escuro para a barra de rodapé
+
+[colors.hints.start]
+foreground = "#D3D3D3"  # Cor do texto do início das dicas em cinza claro
+background = "#F9E2AF"  # Um tom claro para o fundo das dicas
+
+[colors.hints.end]
+foreground = "#D3D3D3"  # Cor do texto do fim das dicas em cinza claro
+background = "#4D9F9D"  # Um teal mais escuro para o fundo das dicas
+
+[colors.selection]
+text = "#D3D3D3"  # Cor do texto da seleção em cinza claro
+background = "#3A607E"  # Um teal mais escuro para o fundo da seleção
+
+[colors.normal]
+black = "#1B1F24"  # Preto mais escuro
+red = "#FF6F61"  # Um vermelho suave
+green = "#4D9F9D"  # Verde teal
+yellow = "#F9E2AF"  # Amarelo suave
+blue = "#3A607E"  # Um teal mais escuro
+magenta = "#FF6F61"  # Um magenta suave
+cyan = "#5BC0BE"  # Um teal claro
+white = "#D3D3D3"  # Cinza claro
+
+[colors.bright]
+black = "#2C2F33"  # Preto mais claro
+red = "#FF6F61"  # Um vermelho suave
+green = "#4D9F9D"  # Verde teal
+yellow = "#F9E2AF"  # Amarelo suave
+blue = "#3A607E"  # Um teal mais escuro
+magenta = "#FF6F61"  # Um magenta suave
+cyan = "#5BC0BE"  # Um teal claro
+white = "#D3D3D3"  # Cinza claro
+
+[colors.dim]
+black = "#1B1F24"  # Preto mais escuro
+red = "#FF6F61"  # Um vermelho suave
+green = "#4D9F9D"  # Verde teal
+yellow = "#F9E2AF"  # Amarelo suave
+blue = "#3A607E"  # Um teal mais escuro
+magenta = "#FF6F61"  # Um magenta suave
+cyan = "#5BC0BE"  # Um teal claro
+white = "#D3D3D3"  # Cinza claro
+
+[[colors.indexed_colors]]
+index = 16
+color = "#FAB387"  # Um tom de laranja suave
+
+[[colors.indexed_colors]]
+index = 17
+color = "#F5E0DC"  # Um tom de rosa suave
