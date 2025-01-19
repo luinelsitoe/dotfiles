@@ -5,13 +5,11 @@ source ~/.config/nvim/tree-sitter.vim
 source ~/.config/nvim/bufferline.vim
 source ~/.config/nvim/colorizer.vim
 
-
 set clipboard=unnamedplus
 set number
 set relativenumber
 set shiftwidth=4
 set foldmethod=expr
-autocmd VimEnter * AirlineTheme catppuccin
 hi normal ctermbg=none guibg=none
 
 let mapleader = " "
@@ -38,12 +36,10 @@ nnoremap <leader>b :Telescope buffers<CR>
 nnoremap <leader>c :Telescope commands<CR>
 nnoremap <leader>s :SessionSearch<CR>
 nnoremap <leader>e :NvimTreeFindFileToggle<CR>
-nnoremap <leader>t :ToggleTerm<CR>
     
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <leader>q :bdelete<CR>
-nnoremap <leader>w :w<CR>:bdelete<CR>
 
 nnoremap <leader>h <c-w>h
 nnoremap <leader>j <c-w>j

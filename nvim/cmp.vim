@@ -36,6 +36,11 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = "rounded",  
 })
 
+vim.diagnostic.config({
+  float = {
+    border = "rounded",  
+  },
+})
 require('tabnine').setup({
   disable_auto_comment=true,
   accept_keymap="<C-l>",

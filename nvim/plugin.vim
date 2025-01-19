@@ -9,16 +9,14 @@ call plug#begin()
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'nvim-lua/plenary.nvim'  
     Plug 'nvim-telescope/telescope.nvim'
-    Plug 'akinsho/toggleterm.nvim'
     "depends on npm live-server
     Plug 'barrett-ruth/live-server.nvim'
     Plug 'rmagatti/auto-session'
     Plug 'akinsho/bufferline.nvim', { 'branch': 'main' }
     Plug 'norcalli/nvim-colorizer.lua'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-
     Plug 'mattn/emmet-vim'
+    Plug 'terrortylor/nvim-comment'
+
     Plug 'hrsh7th/nvim-cmp'          
     Plug 'hrsh7th/cmp-nvim-lsp'      
     Plug 'hrsh7th/cmp-buffer'        
@@ -30,8 +28,8 @@ call plug#begin()
 call plug#end()
 
 lua require("mason").setup{}
-lua require("toggleterm").setup{}
 lua require('nvim-tree').setup{}
 lua require('live-server').setup{}
 lua require("auto-session").setup{}
+lua require('nvim_comment').setup()
 colorscheme catppuccin
