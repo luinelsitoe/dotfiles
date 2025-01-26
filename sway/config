@@ -285,13 +285,13 @@ bindsym Mod1+h exec --no-startup-id alacritty -e htop
 bindsym Mod1+b exec --no-startup-id firefox
 bindsym Mod1+s exec --no-startup-id spotify
 bindsym Mod1+k exec --no-startup-id ~/KDEC.sh
-bindsym Mod1+e exec --no-startup-id thunar
+bindsym Mod1+e exec --no-startup-id nautilus
 bindsym Mod1+r exec --no-startup-id crow 
 bindsym Mod1+t exec --no-startup-id ~/thunderbird.sh
 bindsym Mod1+m exec --no-startup-id alacritty -e nvim
 bindsym Mod1+c exec --no-startup-id gnome-calculator 
-bindsym Shift+Print exec --no-startup-id grim ~/Imagens/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png && notify-send "Captura de tela" "Captura da tela inteira salva em ~/Imagens."
-bindsym Print exec --no-startup-id grim -g "$(slurp)" ~/Imagens/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png && notify-send "Captura de tela" "Captura de área selecionada salva em ~/Imagens."
+bindsym Shift+Print exec --no-startup-id grim ~/Pictures/Screenshots/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png && notify-send "Captura de tela" "Captura da tela inteira salva em ~/Pictures/Screenshots."
+bindsym Print exec --no-startup-id grim -g "$(slurp)" ~/Pictures/Screenshots/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png && notify-send "Captura de tela" "Captura de área selecionada salva em ~/Pictures/Screenshots."
 bindsym $mod+F3 exec --no-startup-id playerctl -a next
 bindsym $mod+F2 exec --no-startup-id playerctl -a previous
 bindsym $mod+F1 exec --no-startup-id playerctl -a pause
@@ -299,12 +299,12 @@ bindsym $mod+F4 exec --no-startup-id playerctl -a play
 
 bindsym Mod1+q exec --no-startup-id alacritty -e sh -c 'cd "$(find $HOME -type d | fzf  --border )" && exec zsh'
 bindsym Mod1+n exec --no-startup-id alacritty -e sh -c 'cd "$(find $HOME -type d | fzf  --border )" && exec nvim .'
-bindsym Mod1+w exec --no-startup-id alacritty -e sh -c 'exec setsid nemo "$(find $HOME -type d | fzf --border )"'
+bindsym Mod1+w exec --no-startup-id alacritty -e sh -c 'exec setsid nautilus "$(find $HOME -type d | fzf --border )"'
 bindsym Mod1+o exec --no-startup-id alacritty -e sh -c 'exec setsid xdg-open "$(find $HOME -type f | fzf  --border )"'
 
 #configuring colors
 # target                 title     bg    text   indicator  border
-client.focused           $surface2 $base $text  $teal $teal
+client.focused           $surface2 $base $text  $teal      $teal
 client.focused_inactive  $base     $base $text  $surface1  $surface1
 client.unfocused         $base     $base $text  $surface1  $surface1
 client.urgent            $peach    $base $peach $base      $base

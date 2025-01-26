@@ -1,6 +1,7 @@
 local config = {
     cmd = {
-        vim.fn.stdpath("data") .. "/mason/packages/jdtls/bin/jdtls"
+	"jdtls",
+	"--jvm-arg=" .. string.format("-javaagent:%s", vim.fn.expand "$MASON/share/jdtls/lombok.jar"),
     },
     root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
 }

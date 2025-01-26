@@ -17,7 +17,8 @@ Adicione a seguinte configuração no arquivo:
 
 local config = {
     cmd = {
-        vim.fn.stdpath("data") .. "/mason/packages/jdtls/bin/jdtls"
+	"jdtls",
+	"--jvm-arg=" .. string.format("-javaagent:%s", vim.fn.expand "$MASON/share/jdtls/lombok.jar"),
     },
     root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
 }
@@ -49,3 +50,4 @@ Certifique-se de estar usando Java 17 e de que o jdtls conhece o JDK correto:
 :LspInfo
 
 Verifique se o jdtls está listado.
+Verifique se o lombok esta em $MASON/share/jdtls/lombok.jar

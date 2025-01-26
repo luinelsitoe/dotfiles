@@ -16,6 +16,7 @@ call plug#begin()
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'mattn/emmet-vim'
     Plug 'terrortylor/nvim-comment'
+    Plug 'akinsho/toggleterm.nvim'
 
     Plug 'hrsh7th/nvim-cmp'          
     Plug 'hrsh7th/cmp-nvim-lsp'      
@@ -26,10 +27,3 @@ call plug#begin()
     Plug 'L3MON4D3/LuaSnip'          
     Plug 'neovim/nvim-lspconfig'      
 call plug#end()
-
-lua require("mason").setup{}
-lua require('nvim-tree').setup{}
-lua require('live-server').setup{}
-lua require("auto-session").setup{}
-lua require('nvim_comment').setup()
-colorscheme catppuccin

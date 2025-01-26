@@ -1,15 +1,14 @@
 source ~/.config/nvim/plugin.vim
+source ~/.config/nvim/general_setups.vim
 source ~/.config/nvim/lsp.vim
 source ~/.config/nvim/cmp.vim
 source ~/.config/nvim/tree-sitter.vim
 source ~/.config/nvim/bufferline.vim
-source ~/.config/nvim/colorizer.vim
 
 set clipboard=unnamedplus
 set number
 set relativenumber
 set shiftwidth=4
-set foldmethod=expr
 hi normal ctermbg=none guibg=none
 
 let mapleader = " "
@@ -30,12 +29,18 @@ nnoremap crc <Cmd>lua require('jdtls').extract_constant()<CR>
 vnoremap crc <Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>
 vnoremap crm <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
 
+"code actions
+nnoremap <A-a> <Cmd>lua vim.lsp.buf.code_action()<CR>
+
 nnoremap <leader>f :Telescope find_files<CR>
 nnoremap <leader>g :Telescope live_grep<CR>
 nnoremap <leader>b :Telescope buffers<CR>
 nnoremap <leader>c :Telescope commands<CR>
 nnoremap <leader>s :SessionSearch<CR>
 nnoremap <leader>e :NvimTreeFindFileToggle<CR>
+
+"terminal mapings
+nnoremap <leader>t :ToggleTerm<CR>
     
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
