@@ -3,7 +3,6 @@ source ~/.config/nvim/general_setups.vim
 source ~/.config/nvim/lsp.vim
 source ~/.config/nvim/cmp.vim
 source ~/.config/nvim/tree-sitter.vim
-source ~/.config/nvim/bufferline.vim
 
 set clipboard=unnamedplus
 set number
@@ -11,13 +10,12 @@ set relativenumber
 set shiftwidth=4
 hi normal ctermbg=none guibg=none
 
-let mapleader = " "
-
 "don't judge me ;)
-cnoremap W w
-cnoremap Q q
-tnoremap <Esc> <C-\><C-n>
-
+tnoremap <A-Esc> <C-\><C-n>
+nnoremap <leader>q :bdelete<CR>
+"there's an anoying session that is always saved
+autocmd VimEnter * :SessionDelete /home/luinel
+ 
 "emmet html...
 let g:user_emmet_leader_key='<C-s>'
 
@@ -40,19 +38,13 @@ nnoremap <leader>s :SessionSearch<CR>
 nnoremap <leader>e :NvimTreeFindFileToggle<CR>
 
 "terminal mapings
-nnoremap <leader>t :ToggleTerm<CR>
+nnoremap <leader>t :ToggleTerm direction=vertical size=80<CR>
     
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
-nnoremap <leader>q :bdelete<CR>
-
 nnoremap <leader>h <c-w>h
 nnoremap <leader>j <c-w>j
 nnoremap <leader>k <c-w>k
 nnoremap <leader>l <c-w>l
 
-nnoremap <leader>v :vs<CR>
-nnoremap <leader>p :sp<CR>
 nnoremap <leader>rk <c-w>10-
 nnoremap <leader>rj <c-w>10+
 nnoremap <leader>rh <c-w>10<

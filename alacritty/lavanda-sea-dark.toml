@@ -1,0 +1,73 @@
+[colors.primary]
+background = "#191724"  # Fundo escuro com tom roxo profundo
+foreground = "#E0DEF4"  # Texto claro para contraste
+
+[colors.cursor]
+text = "#191724"
+cursor = "#C4A7E7"  # Lavanda suave
+
+[colors.vi_mode_cursor]
+text = "#191724"
+cursor = "#B4BEFE"  # Azul lavanda
+
+[colors.search.matches]
+foreground = "#191724"
+background = "#C4A7E7"  # Lavanda suave para realce
+
+[colors.search.focused_match]
+foreground = "#191724"
+background = "#9CCFD8"  # Azul esverdeado para destaque
+
+[colors.footer_bar]
+foreground = "#191724"
+background = "#B4BEFE"  # Azul lavanda
+
+[colors.hints.start]
+foreground = "#191724"
+background = "#F6C177"  # Amarelo pastel para dicas
+
+[colors.hints.end]
+foreground = "#191724"
+background = "#B4BEFE"
+
+[colors.selection]
+text = "#E0DEF4"
+background = "#C4A7E7"  # Lavanda para seleção
+
+[colors.normal]
+black = "#191724"
+red = "#EB6F92"  # Rosa avermelhado forte
+green = "#A3BE8C"
+yellow = "#F6C177"
+blue = "#9CCFD8"
+magenta = "#C4A7E7"  # Lavanda principal
+cyan = "#B4BEFE"
+white = "#E0DEF4"
+
+[colors.bright]
+black = "#555169"
+red = "#EB6F92"
+green = "#A3BE8C"
+yellow = "#F6C177"
+blue = "#9CCFD8"
+magenta = "#C4A7E7"
+cyan = "#B4BEFE"
+white = "#FFFFFF"
+
+[colors.dim]
+black = "#332E41"
+red = "#EB6F92"
+green = "#A3BE8C"
+yellow = "#F6C177"
+blue = "#9CCFD8"
+magenta = "#C4A7E7"
+cyan = "#B4BEFE"
+white = "#E0DEF4"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#F6C177"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#9CCFD8"

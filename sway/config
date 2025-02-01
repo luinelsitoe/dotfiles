@@ -49,8 +49,8 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg "$(find /home/luinel/windowsbg/ -type f | shuf -n 1)" fill
-#output * bg /home/luinel/backgrounds/cyberpunk.jpg fill
+#output * bg "$(find /home/luinel/windowsbg/ -type f | shuf -n 1)" fill
+output * bg /usr/share/backgrounds/linuxmint-wilma/jcorl_monument_valley.jpg fill
 #
 # Example configuration:
 #
@@ -277,6 +277,7 @@ exec --no-startup-id ~/.local/bin/autotiling
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id swaync
 exec --no-startup-id ~/.config/scripts/battery_monitor.sh
+exec --no-startup-id ~/.config/scripts/calc_total_data.sh
 
 #My apps keybindings
 bindsym Mod4+v exec swaync-client -t -sw
@@ -285,7 +286,7 @@ bindsym Mod1+h exec --no-startup-id alacritty -e htop
 bindsym Mod1+b exec --no-startup-id firefox
 bindsym Mod1+s exec --no-startup-id spotify
 bindsym Mod1+k exec --no-startup-id ~/KDEC.sh
-bindsym Mod1+e exec --no-startup-id nautilus
+bindsym Mod1+e exec --no-startup-id thunar
 bindsym Mod1+r exec --no-startup-id crow 
 bindsym Mod1+t exec --no-startup-id ~/thunderbird.sh
 bindsym Mod1+m exec --no-startup-id alacritty -e nvim
@@ -299,14 +300,14 @@ bindsym $mod+F4 exec --no-startup-id playerctl -a play
 
 bindsym Mod1+q exec --no-startup-id alacritty -e sh -c 'cd "$(find $HOME -type d | fzf  --border )" && exec zsh'
 bindsym Mod1+n exec --no-startup-id alacritty -e sh -c 'cd "$(find $HOME -type d | fzf  --border )" && exec nvim .'
-bindsym Mod1+w exec --no-startup-id alacritty -e sh -c 'exec setsid nautilus "$(find $HOME -type d | fzf --border )"'
+bindsym Mod1+w exec --no-startup-id alacritty -e sh -c 'exec setsid thunar "$(find $HOME -type d | fzf --border )"'
 bindsym Mod1+o exec --no-startup-id alacritty -e sh -c 'exec setsid xdg-open "$(find $HOME -type f | fzf  --border )"'
 
 #configuring colors
 # target                 title     bg    text   indicator  border
-client.focused           $surface2 $base $text  $teal      $teal
-client.focused_inactive  $base     $base $text  $surface1  $surface1
-client.unfocused         $base     $base $text  $surface1  $surface1
+client.focused           $surface2 $base $text  $overlay1  $overlay1
+client.focused_inactive  $base     $base $text  $surface0  $surface0
+client.unfocused         $base     $base $text  $surface0  $surface0
 client.urgent            $peach    $base $peach $base      $base
 client.placeholder       $overlay0 $base $text  $base      $base
 client.background        $base
