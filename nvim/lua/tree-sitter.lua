@@ -1,4 +1,3 @@
-lua << EOF
 require'nvim-treesitter.configs'.setup {
     auto_install = true,
     highlight = {
@@ -16,4 +15,3 @@ require'nvim-treesitter.configs'.setup {
 	},
     },
 }
-EOF
