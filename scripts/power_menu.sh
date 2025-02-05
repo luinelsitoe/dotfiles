@@ -2,7 +2,7 @@
 
 menu="Suspend\nLogout\nRestart\nShutdown"
 
-option=$(echo -e "$menu" | dmenu)
+option=$(echo -e "$menu" | wofi -p "Power menu" -d) 
 
 case "$option" in
     "Suspend")

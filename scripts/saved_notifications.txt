@@ -1,4 +1,0 @@
-5-NetworkManager Applet: Disconnected
-4-NetworkManager Applet: Disconnected
-3-NetworkManager Applet: Connection Established
-2-NetworkManager Applet: Connection Established
