@@ -26,12 +26,12 @@ require'lspconfig'.lua_ls.setup {
 
     client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
       runtime = {
-        version = 'LuaJIT'
+        version = '5.4'
       },
       workspace = {
         checkThirdParty = false,
         library = {
-          vim.env.VIMRUNTIME
+          vim.env.VIMRUNTIME,
         }
       }
     })

@@ -1,7 +1,5 @@
 vim.opt.termguicolors = true
-vim.cmd('colorscheme dracula')
-vim.g.mapleader = " "
-
+vim.cmd('colorscheme catppuccin')
 require'colorizer'.setup({
   '*';
 }, {
@@ -14,8 +12,8 @@ require'colorizer'.setup({
 
 require'nvim-tree'.setup {
   view = {
-    width = 50,  
-    side = 'left',  
+    width = 50,
+    side = 'left',
   },
 }
 

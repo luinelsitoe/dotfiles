@@ -1,18 +1,4 @@
--- Configuração do Lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup({
+return {
   -- Gerenciador de LSPs
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
@@ -59,9 +45,6 @@ require("lazy").setup({
   -- Integração com Lazygit
   "kdheepak/lazygit.nvim",
 
-  -- Harpoon (atalhos rápidos)
-  "ThePrimeagen/harpoon",
-
   -- Histórico de desfazer
   "mbbill/undotree",
 
@@ -73,4 +56,4 @@ require("lazy").setup({
   "hrsh7th/cmp-cmdline",
   "saadparwaiz1/cmp_luasnip",
   "L3MON4D3/LuaSnip",
-})
+}

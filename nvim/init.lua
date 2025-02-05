@@ -1,11 +1,12 @@
 -- Carregar arquivos de configuração
-require('plugin')
+require("config.lazy")
 require('general_setups')
 require('lsp')
 require('completion')
 require('tree-sitter')
 
 -- Configurações gerais
+vim.g.mapleader = " "
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -14,9 +15,7 @@ vim.cmd('hi Normal ctermbg=none guibg=none')
 
 -- Mapeamentos normais
 vim.keymap.set('n', '<leader>q', ':bd<CR>', { silent = true })
-vim.keymap.set('n', '<Tab>', ':bn<CR>', { silent = true })
-vim.keymap.set('n', '<S-Tab>', ':bp<CR>', { silent = true })
-
+vim.keymap.set('n', '<Tab>', ':bn<CR>', { silent = true }) vim.keymap.set('n', '<S-Tab>', ':bp<CR>', { silent = true })
 -- Mapeamento no terminal
 vim.keymap.set('t', '<A-Esc>', '<C-\\><C-n>', { silent = true })
 
@@ -59,5 +58,8 @@ vim.keymap.set('n', '<leader>rl', '<C-w>10>', { silent = true })
 
 -- LSP 
 vim.keymap.set('n', '<C-k>', ':lua vim.lsp.buf.hover()<CR>', { silent = true })
-vim.keymap.set('n', '<C-j>', ':lua vim.diagnostic.open_float()<CR>', { silent = true })
 vim.keymap.set('n', '<A-a>', ":lua vim.lsp.buf.code_action()<CR>", { silent = true })
+vim.keymap.set('n', 'gd', ":lua vim.lsp.buf.definition()<CR>", { silent = true })
+vim.keymap.set('n', 'gr', ":lua vim.lsp.buf.declaration()<CR>", { silent = true })
+vim.keymap.set('n', '<A-a>', ":lua vim.lsp.buf.code_action()<CR>", { silent = true })
+vim.keymap.set('n', '<C-j>', ':lua vim.diagnostic.open_float()<CR>', { silent = true })
