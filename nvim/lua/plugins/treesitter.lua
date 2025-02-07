@@ -10,9 +10,6 @@ return {
             },
             incremental_selection = {
                 enable = true,
-                keymaps = {
-                    init_selection = "gnn",
-                },
             },
         }
         vim.wo.foldmethod = 'expr'

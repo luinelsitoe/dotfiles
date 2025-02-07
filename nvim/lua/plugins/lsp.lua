@@ -60,9 +60,7 @@ config = function ()
     lspconfig.ts_ls.setup{}
 
     --VUE
-    lspconfig.vuels.setup{
-	cmd ={ 'vls' }
-    }
+    lspconfig.vuels.setup{}
 
     --CSS
     lspconfig.cssls.setup {
