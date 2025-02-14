@@ -1,10 +1,8 @@
 vim.g.mapleader = " "
 
-vim.cmd('hi Normal ctermbg=none guibg=none')
-
+-- vim.cmd('hi Normal ctermbg=none guibg=none')
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
-vim.opt.clipboard = 'unnamedplus'
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.shiftwidth = 2

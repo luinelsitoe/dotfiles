@@ -1,52 +1,62 @@
 return {
   {
+    "akinsho/toggleterm.nvim",
+    opts = {},
+    keys = {
+      {
+        '<leader>t',
+        '<cmd>ToggleTerm direction=float<cr>',
+        desc = "Toggle terminal"
+      },
+      {
+        '<leader>z',
+        '<cmd>lua require("toggleterm.terminal").Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" }):toggle()<cr>',
+        desc = "Toggle terminal and open lazygit"
+      }
+    }
+  },
+
+  {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    keys = { {
-      "<leader>?",
-      function()
-        require("which-key").show({ global = false })
-      end,
-      desc = "Buffer Local Keymaps (which-key)",
-    },
-    },
-  },
-  {
-    'stevearc/oil.nvim',
-    ---@module 'oil'
-    ---@type oil.SetupOpts
     opts = {},
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    keys = { { '<leader>e', '<cmd>Oil --float<cr>', desc = 'Open File explorer' } },
-    lazy = false,
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
   },
 
   {
-    "catppuccin/nvim",
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
     lazy = false,
-    name = "catppuccin",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("nvim-tree").setup {
+        view = {
+          width = 50,
+        }
+      }
+    end,
+    keys = {
+      { "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Toggle file explorer" }
+    }
+  },
+
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+    lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme catppuccin]])
+      vim.cmd([[colorscheme oxocarbon]])
     end
-  },
-
-  {
-    'romgrk/barbar.nvim',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
-    init = function() vim.g.barbar_auto_setup = false end,
-    opts = {},
-    version = '^1.0.0',
-  },
-
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    ---@module "ibl"
-    ---@type ibl.config
-    opts = {},
   },
 
   {
@@ -59,9 +69,17 @@ return {
 
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
+    opts = {}
+  },
+
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
     opts = {},
   },
 
@@ -75,31 +93,20 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = true
+    opts = {}
   },
 
   {
     "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "*",
     event = "VeryLazy",
-    config = true
+    opts = {}
   },
 
   {
     "rmagatti/auto-session",
-    config = true,
+    opts = {},
     keys = { { '<leader>s', ':SessionSearch<cr>', desc = "Search sessions" } }
-  },
-
-  {
-    "akinsho/toggleterm.nvim",
-    config = true,
-    keys = { { '<leader>t', ':ToggleTerm<cr>', desc = "Toggle terminal" } }
-  },
-
-  {
-    "kdheepak/lazygit.nvim",
-    keys = { { '<leader>z', ':LazyGit<cr>', desc = "Show LazyGit" } }
   },
 
   {
@@ -107,7 +114,8 @@ return {
     keys = { { "<leader>u", ":UndotreeToggle<cr>:UndotreeFocus<cr>", desc = "Toggle undotree" } }
   },
 
-  { "barrett-ruth/live-server.nvim", config = true },
+  { "barrett-ruth/live-server.nvim", opts = {} },
 
-  'ThePrimeagen/vim-be-good'
+  { "lewis6991/gitsigns.nvim",       opts = {} }
+
 }

@@ -37,14 +37,6 @@ return {
         ["<c-e>"] = cmp.mapping.close(),
         ["<cr>"] = cmp.mapping.confirm({ select = true }),
       },
-      window = {
-        completion = cmp.config.window.bordered({
-          border = "rounded",
-        }),
-        documentation = cmp.config.window.bordered({
-          border = "rounded",
-        }),
-      },
     })
   end,
 }
