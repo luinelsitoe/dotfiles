@@ -25,7 +25,7 @@ vim.keymap.set('n', 'gi', ":lua vim.lsp.buf.implementation()<cr>", { silent = tr
 vim.keymap.set('n', 'gr', ":lua vim.lsp.buf.references()<cr>", { silent = true, desc = "Show references" })
 
 -- Diagnostics
-vim.keymap.set('n', '<c-j>', ':lua vim.diagnostic.open_float()<cr>',
+vim.keymap.set('n', '<c-k>', ':lua vim.diagnostic.open_float()<cr>',
   { silent = true, desc = "Show diagnostic on the line" })
 vim.keymap.set('n', '<leader>dd', ':lua vim.diagnostic.setloclist()<cr>',
   { silent = true, desc = "Show all diagnostics in the buffer" })

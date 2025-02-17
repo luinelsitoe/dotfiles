@@ -116,6 +116,5 @@ return {
 
   { "barrett-ruth/live-server.nvim", opts = {} },
 
-  { "lewis6991/gitsigns.nvim",       opts = {} }
-
+  { "lewis6991/gitsigns.nvim",       opts = {} },
 }
