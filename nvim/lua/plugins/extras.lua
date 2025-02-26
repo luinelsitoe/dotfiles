@@ -2,12 +2,8 @@ return {
   {
     "akinsho/toggleterm.nvim",
     opts = {},
-    keys = {
-      {
-        '<leader>t',
-        '<cmd>ToggleTerm direction=float<cr>',
-        desc = "Toggle terminal"
-      },
+    keys =
+    {
       {
         '<leader>z',
         '<cmd>lua require("toggleterm.terminal").Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" }):toggle()<cr>',
@@ -72,7 +68,7 @@ return {
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
-    opts = {}
+    opts = {},
   },
 
   {
@@ -104,9 +100,22 @@ return {
   },
 
   {
+    'mrcjkb/haskell-tools.nvim',
+    version = '^4', -- Recommended
+    lazy = false, -- This plugin is already lazy
+  },
+
+  {
     "rmagatti/auto-session",
     opts = {},
-    keys = { { '<leader>s', ':SessionSearch<cr>', desc = "Search sessions" } }
+    keys = { { '<leader>fs', ':SessionSearch<cr>', desc = "Search sessions" } },
+    lazy = false
+  },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {},
+    keys = { { "<leader>h", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview hunk" } }
   },
 
   {
@@ -114,7 +123,6 @@ return {
     keys = { { "<leader>u", ":UndotreeToggle<cr>:UndotreeFocus<cr>", desc = "Toggle undotree" } }
   },
 
-  { "barrett-ruth/live-server.nvim", opts = {} },
+  { "barrett-ruth/live-server.nvim", opts = {} }
 
-  { "lewis6991/gitsigns.nvim",       opts = {} },
 }
