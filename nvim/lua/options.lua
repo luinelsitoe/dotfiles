@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
--- vim.cmd('hi Normal ctermbg=none guibg=none')
+vim.cmd('hi Normal ctermbg=none guibg=none')
 vim.opt.clipboard = "unnamedplus"
 vim.opt.smartcase = true
 vim.opt.number = true

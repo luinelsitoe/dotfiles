@@ -1,16 +1,4 @@
 return {
-  {
-    "akinsho/toggleterm.nvim",
-    opts = {},
-    keys =
-    {
-      {
-        '<leader>z',
-        '<cmd>lua require("toggleterm.terminal").Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" }):toggle()<cr>',
-        desc = "Toggle terminal and open lazygit"
-      }
-    }
-  },
 
   {
     "folke/which-key.nvim",
@@ -28,30 +16,21 @@ return {
   },
 
   {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require("nvim-tree").setup {
-        view = {
-          width = 50,
-        }
-      }
-    end,
     keys = {
-      { "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Toggle file explorer" }
+      { '<leader>e', '<cmd>Oil --float<cr>', desc = 'Open file explorer' }
     }
   },
 
   {
-    "nyoom-engineering/oxocarbon.nvim",
-    lazy = false,
-    priority = 1000,
+    "rose-pine/neovim",
     config = function()
-      vim.cmd([[colorscheme oxocarbon]])
+      vim.cmd("colorscheme rose-pine")
     end
   },
 
@@ -102,7 +81,7 @@ return {
   {
     'mrcjkb/haskell-tools.nvim',
     version = '^4', -- Recommended
-    lazy = false, -- This plugin is already lazy
+    lazy = false,   -- This plugin is already lazy
   },
 
   {
@@ -122,7 +101,4 @@ return {
     "mbbill/undotree",
     keys = { { "<leader>u", ":UndotreeToggle<cr>:UndotreeFocus<cr>", desc = "Toggle undotree" } }
   },
-
-  { "barrett-ruth/live-server.nvim", opts = {} }
-
 }

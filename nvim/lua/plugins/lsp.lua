@@ -49,6 +49,9 @@ return {
     --CLANG
     lspconfig.clangd.setup {}
 
+    --CSHARP
+    require'lspconfig'.csharp_ls.setup{}
+
     --TYPESCRIPT + VUE
     require 'lspconfig'.volar.setup {}
     lspconfig.ts_ls.setup {

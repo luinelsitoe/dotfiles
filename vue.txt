@@ -1,0 +1,8 @@
+# Instalar Vue CLI globalmente (opcional, mas útil)
+npm install -g @vue/cli
+
+# Instalar Volar (LSP para Vue 3)
+npm install -g @vue/language-server
+
+# Instalar TypeScript e Plugin do Vue para TypeScript
+npm install -D typescript @vue/typescript-plugin
