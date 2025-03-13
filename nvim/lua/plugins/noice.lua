@@ -2,10 +2,13 @@ return {
   "folke/noice.nvim",
   dependencies = {
     "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
+    -- "rcarriga/nvim-notify",
   },
   event = "VeryLazy",
   opts = {
+    cmdline = {
+      view = "cmdline",
+    },
     lsp = {
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -36,9 +39,18 @@ return {
     },
     presets = {
       bottom_search = true,
-      command_palette = true,
       long_message_to_split = true,
-      lsp_doc_border = true,
     },
+    views = {
+      mini = {
+        position = {
+          row = -1,
+          col = 0,
+        },
+      },
+    },
+  },
+  keys = {
+    { "<leader>nh", function() require("noice").cmd("history") end, desc = "Noice History" },
   }
 }

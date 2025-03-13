@@ -1,7 +1,7 @@
-vim.keymap.set('n', '<c-d>', "<c-d>zz", { silent = true, desc = "Down half page and center" })
-vim.keymap.set('n', '<c-u>', "<c-u>zz", { silent = true, desc = "Up half page and center" })
-vim.keymap.set('n', 'n', "nzz", { silent = true, desc = "Find next ocurence and center" })
-vim.keymap.set('n', 'N', "Nzz", { silent = true, desc = "Find previous ocurence and center" })
+-- vim.keymap.set('n', '<c-d>', "<c-d>zz", { silent = true, desc = "Down half page and center" })
+-- vim.keymap.set('n', '<c-u>', "<c-u>zz", { silent = true, desc = "Up half page and center" })
+-- vim.keymap.set('n', 'n', "nzz", { silent = true, desc = "Find next ocurence and center" })
+-- vim.keymap.set('n', 'N', "Nzz", { silent = true, desc = "Find previous ocurence and center" })
 
 vim.keymap.set('t', '<a-Esc>', '<c-\\><c-n>', { silent = true, desc = "Exit terminal mode" })
 

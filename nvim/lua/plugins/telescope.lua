@@ -4,7 +4,6 @@ return {
     { "<leader>ff", function() require("telescope.builtin").find_files() end,       desc = "Find files" },
     { "<leader>fw", function() require("telescope.builtin").live_grep() end,        desc = "Search in files" },
     { "<leader>fb", function() require("telescope.builtin").buffers() end,          desc = "Find buffers" },
-    { "<leader>fn", function() require('telescope').extensions.notify.notify() end, desc = "Find notifications" },
   },
   opts = {
     defaults = {
