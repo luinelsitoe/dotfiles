@@ -1,5 +1,4 @@
 return {
-
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
@@ -94,6 +93,7 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     opts = {},
+    lazy = false,
     keys = { { "<leader>h", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview hunk" } }
   },
 

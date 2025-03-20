@@ -9,9 +9,38 @@ return {
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
   },
+
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
+
+    local cmp_kinds = {
+      Text = '  ',
+      Method = '  ',
+      Function = '  ',
+      Constructor = '  ',
+      Field = '  ',
+      Variable = '  ',
+      Class = '  ',
+      Interface = '  ',
+      Module = '  ',
+      Property = '  ',
+      Unit = '  ',
+      Value = '  ',
+      Enum = '  ',
+      Keyword = '  ',
+      Snippet = '  ',
+      Color = '  ',
+      File = '  ',
+      Reference = '  ',
+      Folder = '  ',
+      EnumMember = '  ',
+      Constant = '  ',
+      Struct = '  ',
+      Event = '  ',
+      Operator = '  ',
+      TypeParameter = '  ',
+    }
 
     require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -37,14 +66,16 @@ return {
         ["<c-e>"] = cmp.mapping.close(),
         ["<cr>"] = cmp.mapping.confirm({ select = true }),
       },
-      -- window = {
-      --   completion = cmp.config.window.bordered({
-      --     border = "rounded",
-      --   }),
-      --   documentation = cmp.config.window.bordered({
-      --     border = "rounded",
-      --   }),
-      -- },
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
+      formatting = {
+        format = function(_, vim_item)
+          vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. vim_item.kind
+          return vim_item
+        end,
+      },
     })
   end,
 }
