@@ -14,7 +14,7 @@ vim.keymap.set('n', '<c-right>', '<c-w>2>', { silent = true, desc = "Resize righ
 vim.keymap.set('n', '<s-k>', ':lua vim.lsp.buf.hover()<cr>', { silent = true, desc = "Show documentation" })
 vim.keymap.set('n', '<leader>ca', ":lua vim.lsp.buf.code_action()<cr>", { silent = true, desc = "Show code actions" })
 vim.keymap.set('n', '<leader>rn', ":lua vim.lsp.buf.rename()<cr>", { silent = true, desc = "Rename" })
-vim.keymap.set('n', '<leader>fc', ":lua vim.lsp.buf.format()<cr>", { silent = true, desc = "Format code" })
+vim.keymap.set('n', '<leader>fc', ":lua vim.lsp.buf.format()<cr>", { silent = true, desc = "Format code with lsp" })
 vim.keymap.set('n', '<c-space>', ':lua vim.lsp.buf.signature_help()<cr>', { silent = true, desc = "Show signature" })
 vim.keymap.set('n', '<leader>gd', ":lua vim.lsp.buf.definition()<cr>", { silent = true, desc = "Go to definition" })
 vim.keymap.set('n', '<leader>gs', ":lua vim.lsp.buf.declaration()<cr>", { silent = true, desc = "Go to declaration" })

@@ -27,9 +27,11 @@ return {
   },
 
   {
-    "rose-pine/neovim",
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
-      vim.cmd("colorscheme rose-pine")
+      vim.cmd("colorscheme tokyonight-night")
     end
   },
 
@@ -67,13 +69,6 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    opts = {}
-  },
-
-  {
-    "kylechui/nvim-surround",
-    version = "*",
-    event = "VeryLazy",
     opts = {}
   },
 

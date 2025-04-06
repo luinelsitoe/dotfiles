@@ -50,7 +50,7 @@ return {
     lspconfig.clangd.setup {}
 
     --CSHARP
-    require'lspconfig'.csharp_ls.setup{}
+    lspconfig.csharp_ls.setup{}
 
     --TYPESCRIPT + VUE
     require 'lspconfig'.volar.setup {}
