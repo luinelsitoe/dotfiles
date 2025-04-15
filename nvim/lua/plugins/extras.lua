@@ -81,6 +81,7 @@ return {
   {
     "rmagatti/auto-session",
     opts = {},
+    enabled = false,
     keys = { { '<leader>fs', ':SessionSearch<cr>', desc = "Search sessions" } },
     lazy = false
   },

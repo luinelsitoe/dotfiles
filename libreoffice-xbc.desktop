@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=LibreOffice (X11)
+Comment=Usar LibreOffice com backend X11 para evitar problemas no Wayland
+Exec=env QT_QPA_PLATFORM=xcb libreoffice %U
+Icon=libreoffice-main
+Terminal=false
+Categories=Office;
+MimeType=application/vnd.oasis.opendocument.text;application/vnd.oasis.opendocument.spreadsheet;application/vnd.oasis.opendocument.presentation;
