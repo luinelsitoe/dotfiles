@@ -71,10 +71,8 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
   zsh-autosuggestions
   zsh-syntax-highlighting
-  zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -114,13 +112,16 @@ alias rm="trash"
 alias cd="z"
 alias ls="eza"
 alias vi='nvim'
+alias vic='cd ~/.config/nvim/; nvim .'
 alias cdf='cd "$(find $HOME -type d | fzf  --border )"'
+alias xo='xdg-open'
+alias nnn='~/nnn/nnn'
 
 bindkey -s '^q' 'cdf\n'
 
 source '/home/luinel/.sdkman/bin/sdkman-init.sh'
 
-export EDITOR=vi
+export EDITOR=nvim
 
 # >>> coursier install directory >>>
 export PATH="$PATH:/home/luinel/.local/share/coursier/bin"

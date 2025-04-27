@@ -1,109 +1,110 @@
 {
-    "layer": "bottom",
+    "layer": "top",
     "position": "top",
-    "height": 30,
+    "height": 24,
+    "spacing": 5,
 
-    "modules-left": ["sway/mode", "sway/workspaces", "sway/window"],
-    "modules-center": [],
-    "modules-right": ["cpu","memory", "pulseaudio", "network", "battery", "clock", "custom/notification", "idle_inhibitor", "tray"],
-    "sway/mode": {
-        "format": " {}"
+    "modules-left": ["hyprland/workspaces", "memory", "cpu"],
+    "modules-center": ["clock"],
+    "modules-right": ["hyprland/language", "custom/notification" , "idle_inhibitor", "wireplumber", "battery", "network", "battery", "tray"],
+
+    "hyprland/workspaces": {
+        "format": "<span size='larger'>{icon}</span>",
+        "on-click": "activate",
+        "format-icons": {
+            "active": "\uf444",
+            "default": "\uf4c3"
+        },
+        "icon-size": 10,
+        "sort-by-number": true,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+        }
     },
-    "sway/workspaces": {
-        "format": "{name}",
-        "disable-scroll": true
-    },
-    "sway/window": {
-        "max-length": 80,
-        "tooltip": false
-    },
+
     "clock": {
-        "format": "{:%d/%m/%y - %H:%M}",
-        "tooltip": false, 
-	"on-click": "gnome-calendar"
+        "format": "{:%d.%m.%Y | %H:%M}"
     },
+
+    "wireplumber": {
+      "format": "{icon} {volume}%",
+      "format-muted": "",
+      "on-click": "helvum",
+      "format-icons": ["", "", ""]
+    },
+
     "battery": {
-        "format": "{icon} {capacity}%",
-        "format-alt": "{icon}  {capacity}% ({time})",
-        "format-icons": ["", "", "", "", ""],
-        "format-charging": "{capacity}% 󰛕 {icon}",
-        "interval": 1,
-        "states": {
-            "warning": 25,
-            "critical": 10
-        },
-        "tooltip": true
+      "bat": "BAT0",
+      "interval": 60,
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-icons": ["", "", "", "", ""],
+      "max-length": 25
     },
-    "network": {
-        "format": "{icon} {essid} ({bandwidthDownBytes})",
-        "format-alt": "{icon} {ipaddr}/{cidr}",
-        "format-alt-click": "click-right",
-        "interval": 1,
-        "format-icons": {
-            "wifi": ["󰤟", "󰤢" ,"󰤨"],
-            "ethernet": ["󰡁"],
-            "disconnected": ["󰤮"]
-        },
-        "on-click": "~/.config/scripts/wlan_connect.sh",
-    "tooltip": false
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-alt": "{icon} {volume}%",
-        "format-alt-click": "click-right",
-        "format-muted": " mute",
-        "format-icons": {
-            "phone": [" ", " ", "  "],
-            "default": ["", "", " "]
-        },
-        "scroll-step": 5,
-        "on-click": "pavucontrol",
-        "tooltip": false
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        },
-        "tooltip": false
-    },
-    "custom/test": {
-        "format": "{}",
-        "exec": "/tmp/test blub",
-        "param": "blah",
-        "interval": 5
-    },
-    "tray": {
-        "icon-size": 18
-    },
+
     "memory": {
-        "interval": 1,
-        "format": " {used:0.1f}G"
+      "interval": 10,
+      "format": " {used:0.1f}G "
     },
+
     "cpu": {
-        "interval": 1,
-        "format": " {usage}%",
-        "max-length": 10
+      "interval": 1,
+      "format": " {usage}% ",
+      "max-length": 10
     },
+
+    "network": {
+      "interval": 1,
+        "format": "",
+        "format-ethernet": "\udb83\udc9d ({bandwidthDownBytes})",
+        "format-wifi": "{icon} ({bandwidthDownBytes})",
+        "format-disconnected": "\udb83\udc9c",
+        "format-icons": ["\udb82\udd2f", "\udb82\udd1f", "\udb82\udd22", "\udb82\udd25", "\udb82\udd28"],
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected",
+    },
+
     "custom/notification": {
-	"tooltip": false,
-	"format": "{} {icon}",
-	"format-icons": {
-	    "notification": "<span foreground='red'><sup></sup></span>",
-	    "none": "",
-	    "dnd-notification": "<span foreground='red'><sup></sup></span>",
-	    "dnd-none": "",
-	    "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-	    "inhibited-none": "",
-	    "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-	    "dnd-inhibited-none": ""
-	},
-	"return-type": "json",
-	"exec-if": "which swaync-client",
-	"exec": "swaync-client -swb",
-	"on-click": "swaync-client -t -sw",
-	"on-click-right": "swaync-client -d -sw",
-	"escape": true
+      "tooltip": false,
+      "format": "{} {icon}",
+      "format-icons": {
+        "notification": "<span foreground='red'><sup></sup></span>",
+        "none": "",
+        "dnd-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-none": "",
+        "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-inhibited-none": ""
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    },
+
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "  ",
+        "deactivated": "  "
+      }
+    },
+
+    "hyprland/language": {
+        "format": "{short}"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 16
     }
 }
