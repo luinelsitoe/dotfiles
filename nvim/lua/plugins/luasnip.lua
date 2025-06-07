@@ -24,14 +24,6 @@ return {
         ls.parser.parse_snippet({ trig = "pm", name = "Plus minus" }, "\\pm $0"),
         ls.parser.parse_snippet({ trig = "mp", name = "Minus plus" }, "\\mp $0"),
 
-        -- Setas
-        ls.parser.parse_snippet({ trig = "->", name = "Right arrow" }, "\\to $0"),
-        ls.parser.parse_snippet({ trig = "=>", name = "Implies" }, "\\implies $0"),
-        ls.parser.parse_snippet({ trig = "<=>", name = "Iff" }, "\\iff $0"),
-        ls.parser.parse_snippet({ trig = "|->", name = "Maps to" }, "\\mapsto $0"),
-        ls.parser.parse_snippet({ trig = "<-", name = "Left arrow" }, "\\leftarrow $0"),
-        ls.parser.parse_snippet({ trig = "->>", name = "Two right arrows" }, "\\rightarrowtail $0"),
-
         -- Gregos
         ls.parser.parse_snippet({ trig = "alpha", name = "Alpha" }, "\\alpha $0"),
         ls.parser.parse_snippet({ trig = "beta", name = "Beta" }, "\\beta $0"),
@@ -40,8 +32,8 @@ return {
         ls.parser.parse_snippet({ trig = "theta", name = "Theta" }, "\\theta $0"),
 
         -- Matrizes/Vetores
-        ls.parser.parse_snippet({ trig = "mat2", name = "2x2 Matrix" },
-          "\\begin{pmatrix}\n$1 & $2 \\\\\n$3 & $4\n\\end{pmatrix} $0"),
+        ls.parser.parse_snippet({ trig = "mat", name = "Empty Matrix" },
+          "\\begin{pmatrix}\n $0 \n\\end{pmatrix}"),
         ls.parser.parse_snippet({ trig = "mat3", name = "3x3 Matrix" },
           "\\begin{pmatrix}\n$1 & $2 & $3 \\\\\n$4 & $5 & $6 \\\\\n$7 & $8 & $9\n\\end{pmatrix} $0"),
         ls.parser.parse_snippet({ trig = "vec", name = "Vector" }, "\\vec{$1} $0"),
@@ -82,7 +74,8 @@ return {
 
 
         -- Ambientes
-        ls.parser.parse_snippet({ trig = "align", name = "Align environment" }, "\\begin{align*}\n$1\n\\end{align*} $0")
+        ls.parser.parse_snippet({ trig = "align", name = "Align environment" }, "\\begin{align*}\n$1\n\\end{align*} $0"),
+        ls.parser.parse_snippet({ trig = "cases", name = "Cases environment" }, "\\begin{cases}\n$1\n\\end{cases} $0")
       })
     end,
   },

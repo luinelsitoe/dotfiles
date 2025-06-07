@@ -50,7 +50,7 @@ return {
     lspconfig.clangd.setup {}
 
     --CSHARP
-    lspconfig.csharp_ls.setup{}
+    lspconfig.csharp_ls.setup {}
 
     --TYPESCRIPT + VUE
     require 'lspconfig'.volar.setup {}
@@ -75,6 +75,9 @@ return {
     lspconfig.cssls.setup {
       capabilities = capabilities,
     }
+
+    lspconfig.ocamllsp.setup {}
+
     --BASH
     lspconfig.bashls.setup {}
   end

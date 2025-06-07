@@ -1,31 +1,28 @@
 {
-    "layer": "top",
+  "layer": "top",
     "position": "top",
+    "output": ["*"],
     "height": 24,
     "spacing": 5,
 
     "modules-left": ["hyprland/workspaces", "memory", "cpu"],
     "modules-center": ["clock"],
-    "modules-right": ["hyprland/language", "custom/notification" , "idle_inhibitor", "wireplumber", "battery", "network", "battery", "tray"],
+    "modules-right": ["hyprland/language", "custom/notification" , "idle_inhibitor", "wireplumber", "network", "battery", "tray"],
 
     "hyprland/workspaces": {
-        "format": "<span size='larger'>{icon}</span>",
-        "on-click": "activate",
-        "format-icons": {
-            "active": "\uf444",
-            "default": "\uf4c3"
-        },
-        "icon-size": 10,
-        "sort-by-number": true,
-        "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-        }
+      "format": "{name}",
+      "on-click": "activate",
+      "sort-by-number": true,
+      "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      }
     },
 
     "clock": {
-        "format": "{:%d.%m.%Y | %H:%M}"
+      "format": "{:%d.%m.%Y | %H:%M}"
     },
 
     "wireplumber": {
@@ -36,6 +33,7 @@
     },
 
     "battery": {
+      "interval": 1,
       "bat": "BAT0",
       "interval": 60,
       "states": {
@@ -60,14 +58,14 @@
 
     "network": {
       "interval": 1,
-        "format": "",
-        "format-ethernet": "\udb83\udc9d ({bandwidthDownBytes})",
-        "format-wifi": "{icon} ({bandwidthDownBytes})",
-        "format-disconnected": "\udb83\udc9c",
-        "format-icons": ["\udb82\udd2f", "\udb82\udd1f", "\udb82\udd22", "\udb82\udd25", "\udb82\udd28"],
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-        "tooltip-format-ethernet": "{ifname}",
-        "tooltip-format-disconnected": "Disconnected",
+      "format": "",
+      "format-ethernet": "\udb83\udc9d ({bandwidthDownBytes})",
+      "format-wifi": "{icon} ({bandwidthDownBytes})",
+      "format-disconnected": "\udb83\udc9c",
+      "format-icons": ["\udb82\udd2f", "\udb82\udd1f", "\udb82\udd22", "\udb82\udd25", "\udb82\udd28"],
+      "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+      "tooltip-format-ethernet": "{ifname}",
+      "tooltip-format-disconnected": "Disconnected",
     },
 
     "custom/notification": {
@@ -100,11 +98,11 @@
     },
 
     "hyprland/language": {
-        "format": "{short}"
+      "format": "{short}"
     },
 
     "tray": {
-        "icon-size": 16,
-        "spacing": 16
+      "icon-size": 16,
+      "spacing": 16
     }
 }

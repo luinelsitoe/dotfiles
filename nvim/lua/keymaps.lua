@@ -1,14 +1,15 @@
--- vim.keymap.set('n', '<c-d>', "<c-d>zz", { silent = true, desc = "Down half page and center" })
--- vim.keymap.set('n', '<c-u>', "<c-u>zz", { silent = true, desc = "Up half page and center" })
--- vim.keymap.set('n', 'n', "nzz", { silent = true, desc = "Find next ocurence and center" })
--- vim.keymap.set('n', 'N', "Nzz", { silent = true, desc = "Find previous ocurence and center" })
-
 vim.keymap.set('t', '<a-Esc>', '<c-\\><c-n>', { silent = true, desc = "Exit terminal mode" })
+
+vim.keymap.set('n', '<c-_>', '<cmd>CommentToggle<cr>', { silent = true, desc = "Toggle comment" })
+vim.keymap.set('v', '<c-_>', ":'<,'>CommentToggle<cr>", { silent = true, desc = "Toggle comment in visual mode" })
 
 vim.keymap.set('n', '<c-up>', '<c-w>2-', { silent = true, desc = "Resize up" })
 vim.keymap.set('n', '<c-down>', '<c-w>2+', { silent = true, desc = "Resize down" })
 vim.keymap.set('n', '<c-left>', '<c-w>2<', { silent = true, desc = "Resize left" })
 vim.keymap.set('n', '<c-right>', '<c-w>2>', { silent = true, desc = "Resize right" })
+
+vim.keymap.set('n', '<tab>', '<cmd>bnext<cr>', { silent = true, desc = "Next buffer" })
+vim.keymap.set('n', '<s-tab>', '<cmd>bprev<cr>', { silent = true, desc = "Previous buffer" })
 
 -- LSP
 vim.keymap.set('n', '<s-k>', ':lua vim.lsp.buf.hover()<cr>', { silent = true, desc = "Show documentation" })
@@ -45,3 +46,10 @@ vim.keymap.set('n', '<leader>k', ':cprevious<cr>', { silent = true, desc = "Go t
 --JAVA
 vim.keymap.set('n', '<leader>i', ':lua require("jdtls").organize_imports()<cr>',
   { silent = true, desc = "Organize imports in java" })
+
+
+-- NAV
+vim.keymap.set('n', '<c-d>', "<c-d>zz", { silent = true, desc = "Down half page and center" })
+vim.keymap.set('n', '<c-u>', "<c-u>zz", { silent = true, desc = "Up half page and center" })
+vim.keymap.set('n', 'n', "nzz", { silent = true, desc = "Find next ocurence and center" })
+vim.keymap.set('n', 'N', "Nzz", { silent = true, desc = "Find previous ocurence and center" })

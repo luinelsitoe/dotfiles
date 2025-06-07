@@ -1,31 +1,34 @@
 @define-color foreground #eeeeee;
-@define-color foreground-inactive #1e1e1e;
+@define-color foreground-inactive #5e5e5e;
 @define-color background rgba(0, 0, 0, 0.6);
 
 * {
-    font-family: JetBrainsMono Nerd Font;
-    font-size: 16px;
-    padding: 0;
-    margin: 0;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 #waybar {
-    color: @foreground;
-    background-color: @background;
+  color: @foreground;
+  background-color: @background;
 }
 
 #workspaces button {
-    color: @foreground;
-    padding-left: 0.7em;
+  color: @foreground-inactive;
+  padding: 0 0.5em;
+  background: transparent;
+  border: none;
 }
 
-#workspaces button.empty {
-    color: @foreground-inactive;
+#workspaces button.active {
+  color: @foreground;
+  font-weight: bold;
 }
 
 #memory,
 #cpu {
-    padding-left: 1em
+  padding-left: 1em
 }
 
 #wireplumber,
@@ -34,5 +37,5 @@
 #network,
 #custom-notification,
 #tray {
-    padding-right: 1em 
+  padding-right: 1em 
 }
