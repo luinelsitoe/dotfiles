@@ -1,0 +1,17 @@
+# https://github.com/alacritty/alacritty-theme
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/gruvbox_dark.toml"
+]
+
+[font]
+normal.family = "JetBrains Mono Nerd Font"
+normal.style = "Regular"
+bold.family = "JetBrains Mono Nerd Font"
+bold.style = "Bold"
+italic.family = "JetBrains Mono Nerd Font"
+italic.style = "Italic"
+size = 12.0
+
+[window]
+opacity = 1

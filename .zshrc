@@ -96,7 +96,7 @@ compdef _directories md
 alias tree='tree -a -I .git'
 
 # Add flags to existing aliases.
-alias ls="${aliases[ls]:-ls} -A"
+# alias ls="${aliases[ls]:-ls} -A"
 
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
@@ -106,26 +106,18 @@ setopt no_auto_menu  # require an extra TAB press to open the completion menu
 # My Config
 if [[ $- == *i* ]]; then
 
-  # 1. Zoxide
-  eval "$(zoxide init zsh)"
-
   # 2. Aliases / funções
-  rm() {
-    trash "$@"
-  }
-
   help() {
     bat --paging=always --language=help "$@"
   }
 
+  alias rm='trash'
   alias vi='nvim'
   alias xo='xdg-open'
+  alias ls='eza'
 
   # EDITOR
   export EDITOR=nvim
-
-  # Go e .NET tools
-  export PATH="$PATH:$HOME/.dotnet/tools"
 
   # Micronaut via SDKMAN
   export PATH="$PATH:$HOME/.sdkman/candidates/micronaut/current/bin"
@@ -133,4 +125,16 @@ if [[ $- == *i* ]]; then
   #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
   export SDKMAN_DIR="$HOME/.sdkman"
   [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+  # Nvim 0.11.4
+  export PATH=/home/luinel/Programs/nvim-linux-x86_64/bin:$PATH
+
+  # Função para escolher diretório com fd + fzf
+  cdf() {
+    local dir
+    dir=$(fd -H --type d . ~ | fzf +m) && cd "$dir"
+    zle accept-line
+  }
+  zle -N cdf
+  bindkey '^[f' cdf
 fi
