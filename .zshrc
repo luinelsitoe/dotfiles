@@ -77,10 +77,10 @@ z4h bindkey z4h-backward-kill-zword Ctrl+Alt+Backspace
 z4h bindkey undo Ctrl+/ Shift+Tab  # undo the last command line change
 z4h bindkey redo Alt+/             # redo the last undone command line change
 
-z4h bindkey z4h-cd-back    Alt+Left   # cd into the previous directory
-z4h bindkey z4h-cd-forward Alt+Right  # cd into the next directory
-z4h bindkey z4h-cd-up      Alt+Up     # cd into the parent directory
-z4h bindkey z4h-cd-down    Alt+Down   # cd into a child directory
+# z4h bindkey z4h-cd-back    Alt+Left   # cd into the previous directory
+# z4h bindkey z4h-cd-forward Alt+Right  # cd into the next directory
+# z4h bindkey z4h-cd-up      Alt+Up     # cd into the parent directory
+# z4h bindkey z4h-cd-down    Alt+Down   # cd into a child directory
 
 # Autoload functions.
 autoload -Uz zmv
@@ -103,38 +103,40 @@ setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
 
-# My Config
-if [[ $- == *i* ]]; then
+######################### My Config ######################
 
-  # 2. Aliases / funções
-  help() {
-    bat --paging=always --language=help "$@"
-  }
+alias rm='trash'
+alias vi='nvim'
+alias xo='xdg-open'
+alias ls='eza'
+alias yz='yazi'
+alias cd='z'
+alias lz='lazygit'
 
-  alias rm='trash'
-  alias vi='nvim'
-  alias xo='xdg-open'
-  alias ls='eza'
 
-  # EDITOR
-  export EDITOR=nvim
+# EDITOR
+export EDITOR=/home/luinel/Programs/nvim-linux-x86_64/bin/nvim
 
-  # Micronaut via SDKMAN
-  export PATH="$PATH:$HOME/.sdkman/candidates/micronaut/current/bin"
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-  #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-  export SDKMAN_DIR="$HOME/.sdkman"
-  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Nvim 0.11.4
+export PATH=/home/luinel/Programs/nvim-linux-x86_64/bin:$PATH
 
-  # Nvim 0.11.4
-  export PATH=/home/luinel/Programs/nvim-linux-x86_64/bin:$PATH
-
-  # Função para escolher diretório com fd + fzf
-  cdf() {
+# Função para escolher diretório com fd + fzf
+cdf() {
+    zle -I
     local dir
-    dir=$(fd -H --type d . ~ | fzf +m) && cd "$dir"
+    dir=$(fd -H --type d --min-depth 1 \
+      --exclude ".git" --exclude "node_modules" --exclude ".cache" \
+      --exclude ".npm" --exclude ".yarn" --exclude "vendor" . ~| fzf --border) && cd "$dir"
     zle accept-line
-  }
-  zle -N cdf
-  bindkey '^[f' cdf
-fi
+}
+zle -N cdf
+bindkey '^[f' cdf
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+export PATH="$HOME/.ghcup/bin:$PATH"

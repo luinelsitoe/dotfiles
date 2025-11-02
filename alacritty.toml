@@ -11,7 +11,7 @@ bold.family = "JetBrains Mono Nerd Font"
 bold.style = "Bold"
 italic.family = "JetBrains Mono Nerd Font"
 italic.style = "Italic"
-size = 12.0
+size = 11.0
 
 [window]
 opacity = 1
