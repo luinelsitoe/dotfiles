@@ -140,3 +140,6 @@ bindkey '^[f' cdf
 eval "$(zoxide init zsh)"
 
 export PATH="$HOME/.ghcup/bin:$PATH"
+
+# .NET global tools
+export PATH="$PATH:$HOME/.dotnet/tools"
