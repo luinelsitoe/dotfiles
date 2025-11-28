@@ -105,6 +105,8 @@ setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
 ######################### My Config ######################
 
+# _zsh_autosuggest_disable
+
 alias rm='trash'
 alias vi='nvim'
 alias xo='xdg-open'

@@ -12,16 +12,11 @@ return {
       opts.completion.menu.auto_show = false
 
       -- desativar seleção / auto-inserção
-      opts.completion.list = opts.completion.list or {}
-      opts.completion.list.selection = {
-        preselect = false,
-        auto_insert = false,
-      }
-
-      -- desativar ghost text (sugestão inline)
-      opts.experimental = opts.experimental or {}
-      opts.experimental.ghost_text = false
-
+      -- opts.completion.list = opts.completion.list or {}
+      -- opts.completion.list.selection = {
+      --   preselect = false,
+      --   auto_insert = false,
+      -- }
       return opts
     end,
   },
@@ -36,4 +31,9 @@ return {
     },
   },
   { "folke/noice.nvim", enabled = false },
+
+  {
+    "nvim-lualine/lualine.nvim",
+    enabled = false,
+  },
 }

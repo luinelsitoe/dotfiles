@@ -5,13 +5,6 @@
 vim.keymap.set("x", "<c-_>", "gc", { remap = true, silent = true, desc = "Toggle comment in visual modes" })
 vim.keymap.set("n", "<c-_>", "gcc", { remap = true, silent = true, desc = "Toggle comment in normal mode" })
 
-vim.keymap.set("n", "<m-c>", "<c-w>c", { remap = true, silent = true, desc = "Close current windows" })
-vim.keymap.set("n", "<m-o>", "<c-w>o", { remap = true, silent = true, desc = "Close all other windows" })
-vim.keymap.set("n", "<m-v>", "<c-w>v", { remap = true, silent = true, desc = "Vertical split" })
-vim.keymap.set("n", "<m-s>", "<c-w>s", { remap = true, silent = true, desc = "Horizontal split" })
-
-vim.keymap.set("n", "<m-f>", "<leader>uZ", { remap = true, silent = true, desc = "Toogle zoom mode" })
-
 vim.keymap.del("n", "H")
 vim.keymap.del("n", "L")
 
